@@ -12,4 +12,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var movieImage: UIImageView!
 
+    func setFieldValue(movie: Movie) {
+        movieImage.downloadImageFrom(link: movie.urlImage, contentMode: UIViewContentMode.redraw)
+    }
+
 }

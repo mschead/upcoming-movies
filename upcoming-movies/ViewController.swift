@@ -12,20 +12,24 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
 
+    var movies: [Movie] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        movies = MoviesService().getMovies()
 
         self.moviesCollectionView.delegate = self
         self.moviesCollectionView.dataSource = self
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return movies.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCollectionCell", for: indexPath) as! MovieCollectionViewCell
-        cell.movieImage.image = UIImage(named: "lego-poster")
+        cell.setFieldValue(movie: movies[0])
         return cell
     }
 
@@ -44,6 +48,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         }
     }
 
+    // check this!
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(0, 0, 0, 0);
     }
