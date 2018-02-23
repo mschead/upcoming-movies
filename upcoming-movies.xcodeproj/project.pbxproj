@@ -25,6 +25,7 @@
 		4ABEE9C52040BA0D00DD0CCB /* MovieDetailActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABEE9C42040BA0D00DD0CCB /* MovieDetailActions.swift */; };
 		4ABEE9C72040BBB900DD0CCB /* MovieDetailReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABEE9C62040BBB900DD0CCB /* MovieDetailReducer.swift */; };
 		4ABEE9C92040BC1800DD0CCB /* MovieDetailState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABEE9C82040BC1800DD0CCB /* MovieDetailState.swift */; };
+		4ABEE9CC2040C20600DD0CCB /* MovieCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABEE9CB2040C20600DD0CCB /* MovieCollectionViewManager.swift */; };
 		D9DC104BB3B7C2480981C513 /* Pods_upcoming_movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE15AEE705278111EA82BE3 /* Pods_upcoming_movies.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		4ABEE9C42040BA0D00DD0CCB /* MovieDetailActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailActions.swift; sourceTree = "<group>"; };
 		4ABEE9C62040BBB900DD0CCB /* MovieDetailReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailReducer.swift; sourceTree = "<group>"; };
 		4ABEE9C82040BC1800DD0CCB /* MovieDetailState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailState.swift; sourceTree = "<group>"; };
+		4ABEE9CB2040C20600DD0CCB /* MovieCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewManager.swift; sourceTree = "<group>"; };
 		6FE15AEE705278111EA82BE3 /* Pods_upcoming_movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_upcoming_movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0057B38F8B7F12FE203713 /* Pods-upcoming-movies-upcoming-moviesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-upcoming-movies-upcoming-moviesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-upcoming-movies-upcoming-moviesTests/Pods-upcoming-movies-upcoming-moviesTests.release.xcconfig"; sourceTree = "<group>"; };
 		B98500B6C38692AF8EFF6880 /* Pods-upcoming-movies-upcoming-moviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-upcoming-movies-upcoming-moviesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-upcoming-movies-upcoming-moviesTests/Pods-upcoming-movies-upcoming-moviesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		4A22CE0F203F38F8008E84F9 /* upcoming-movies */ = {
 			isa = PBXGroup;
 			children = (
+				4ABEE9CA2040C18000DD0CCB /* Services */,
 				4ABEE9C32040B9B700DD0CCB /* DetailScreen */,
 				4ABEE9C22040B99800DD0CCB /* CollectionScreen */,
 				4ABEE9BD2040B8F900DD0CCB /* Root */,
@@ -122,7 +125,6 @@
 				4A22CE19203F38F8008E84F9 /* LaunchScreen.storyboard */,
 				4A22CE1C203F38F8008E84F9 /* Info.plist */,
 				4A22CE32203F800D008E84F9 /* Movie.swift */,
-				4A22CE34203F80EA008E84F9 /* MoviesService.swift */,
 			);
 			path = "upcoming-movies";
 			sourceTree = "<group>";
@@ -158,6 +160,7 @@
 			children = (
 				4A22CE12203F38F8008E84F9 /* ViewController.swift */,
 				4A22CE30203F412D008E84F9 /* MovieCollectionViewCell.swift */,
+				4ABEE9CB2040C20600DD0CCB /* MovieCollectionViewManager.swift */,
 			);
 			path = CollectionScreen;
 			sourceTree = "<group>";
@@ -171,6 +174,14 @@
 				4ABEE9C82040BC1800DD0CCB /* MovieDetailState.swift */,
 			);
 			path = DetailScreen;
+			sourceTree = "<group>";
+		};
+		4ABEE9CA2040C18000DD0CCB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4A22CE34203F80EA008E84F9 /* MoviesService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		6C8E68F34BD336E9730F495B /* Pods */ = {
@@ -415,6 +426,7 @@
 				4A22CE13203F38F8008E84F9 /* ViewController.swift in Sources */,
 				4ABEE9C72040BBB900DD0CCB /* MovieDetailReducer.swift in Sources */,
 				4A6EC9192040689400B2F649 /* MovieDetailViewController.swift in Sources */,
+				4ABEE9CC2040C20600DD0CCB /* MovieCollectionViewManager.swift in Sources */,
 				4A22CE33203F800D008E84F9 /* Movie.swift in Sources */,
 				4A22CE11203F38F8008E84F9 /* AppDelegate.swift in Sources */,
 				4ABEE9C92040BC1800DD0CCB /* MovieDetailState.swift in Sources */,
