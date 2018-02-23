@@ -1,0 +1,6 @@
+framework module Pods_upcoming_movies {
+  umbrella header "Pods-upcoming-movies-umbrella.h"
+
+  export *
+  module * { export * }
+}
