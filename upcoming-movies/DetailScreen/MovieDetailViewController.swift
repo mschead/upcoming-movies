@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import ReSwift
 
-class MovieDetailViewController: UIViewController {
+class MovieDetailViewController: UIViewController, StoreSubscriber {
 
+    typealias StoreSubscriberStateType = MovieDetailState
+    
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var genre: UILabel!
@@ -18,12 +21,15 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        movieImage.image = UIImage(named: "lego-poster-lego")
-        name.text = "Movie test"
-        genre.text = "Action"
-        releaseDate.text = "20/10/2012"
-        overview.text = "Nick Fury is the director of S.H.I.E.L.D., an international peace-keeping agency. The agency is a who's who of Marvel Super Heroes, with Iron Man, The Incredible Hulk, Thor, Captain America, Hawkeye and Black Widow. When global security is threatened by Loki and his cohorts, Nick Fury and his team will need all their powers to save the world from disaster which is formed by Loki and his team."
+        mainStore.subscribe(self, selector: {$0.movieDetailState})
+    }
+    
+    func newState(state: MovieDetailState) {
+//        movieImage.image = U
+        name.text = state.name
+        genre.text = state.genre
+        releaseDate.text = state.releaseDate
+        overview.text = state.overview
     }
 
 }

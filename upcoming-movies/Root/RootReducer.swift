@@ -13,8 +13,7 @@ struct RootReducer : Reducer {
     
     typealias ReducerStateType = RootState
     
-//    let articleListingReducer = ArticleListingReducer()
-//    let articleDetailReducer = ArticleDetailReducer()
+    let movieDetailReducer = MovieDetailReducer()
     
     func handleAction(action: Action, state: RootState?) -> RootState {
         if state == nil {
@@ -24,11 +23,9 @@ struct RootReducer : Reducer {
     }
     
     func handleDefaultAction(action: Action, state: RootState?) -> RootState {
-//        let articleListingState: ArticleListingState = articleListingReducer.handleAction(action: action, state: state?.articleListingState)
-//        let articleDetailState: ArticleDetailState = articleDetailReducer.handleAction(action: action, state: state?.articleDetailState)
-//
-//        return RootState(articleListingState: articleListingState, articleDetailState: articleDetailState)
-        return RootState()
+        let movieDetailState: MovieDetailState = movieDetailReducer.handleAction(action: action, state: state?.movieDetailState)
+
+        return RootState(movieDetailState: movieDetailState)
     }
     
 }
