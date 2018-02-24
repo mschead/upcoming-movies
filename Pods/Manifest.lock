@@ -1,12 +1,17 @@
 PODS:
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
   - ReSwift (3.0.0)
 
 DEPENDENCIES:
+  - MagicalRecord
   - ReSwift (~> 3.0)
 
 SPEC CHECKSUMS:
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   ReSwift: f0255f4b4f2dacd12c5d97d34d13fc5dad6d6371
 
-PODFILE CHECKSUM: 5359c54fc1f4ce939f6007262784a35f9b774ca8
+PODFILE CHECKSUM: 40aa873a24fb912e82b136cf1e9d92e9994e7012
 
 COCOAPODS: 1.4.0

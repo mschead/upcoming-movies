@@ -8,6 +8,7 @@
 
 import UIKit
 import ReSwift
+import MagicalRecord
 
 var mainStore: Store<RootState>!
 @UIApplicationMain
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // initialize RootState of the application
         mainStore = Store(reducer: RootReducer(), state: RootState())
+        
+        // initialize MagicalRecord
+        MagicalRecord.setupCoreDataStack(withStoreNamed: "Model")
         
         return true
     }

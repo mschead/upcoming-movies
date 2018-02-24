@@ -13,7 +13,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var movieImage: UIImageView!
 
     func setFieldValue(movie: Movie) {
-        movieImage.downloadImageFrom(link: movie.urlImage, contentMode: UIViewContentMode.redraw)
+        movieImage.downloadImageFrom(link: "https://image.tmdb.org/t/p/w300" + movie.urlImage!, contentMode: UIViewContentMode.redraw)
     }
 
 }

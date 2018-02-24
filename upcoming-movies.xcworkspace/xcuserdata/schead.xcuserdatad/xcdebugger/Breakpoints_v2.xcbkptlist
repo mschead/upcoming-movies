@@ -9,14 +9,94 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "upcoming-movies/DetailScreen/MovieDetailReducer.swift"
-            timestampString = "541185433.310518"
+            filePath = "upcoming-movies/CollectionScreen/ViewController.swift"
+            timestampString = "541190191.010535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "setMovie(state:action:)"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "loadCollectionInfo()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "upcoming-movies/CollectionScreen/ViewController.swift"
+            timestampString = "541190191.010702"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "loadCollectionInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "upcoming-movies/CollectionScreen/ViewController.swift"
+            timestampString = "541190191.0109349"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "loadCollectionInfo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "upcoming-movies/CollectionScreen/ViewController.swift"
+            timestampString = "541190191.011021"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "loadCollectionInfo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "upcoming_movies.ViewController.(loadCollectionInfo in _E97317F1B9A89F6104F9C8150BF2F174)() -&gt; ()"
+                  moduleName = "upcoming-movies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/schead/Documents/upcoming-movies/upcoming-movies/CollectionScreen/ViewController.swift"
+                  timestampString = "541190191.082381"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "664">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (upcoming_movies.Result&lt;upcoming_movies.ResultsPage&gt;) -&gt; () in upcoming_movies.ViewController.(loadCollectionInfo in _E97317F1B9A89F6104F9C8150BF2F174)() -&gt; ()"
+                  moduleName = "upcoming-movies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/schead/Documents/upcoming-movies/upcoming-movies/CollectionScreen/ViewController.swift"
+                  timestampString = "541190191.0857641"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

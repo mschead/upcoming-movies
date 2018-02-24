@@ -4,6 +4,7 @@ platform :ios, '9.0'
     use_frameworks!
 
     pod 'ReSwift', '~> 3.0'
+    pod 'MagicalRecord'
 
   target 'upcoming-moviesTests' do
     use_frameworks!

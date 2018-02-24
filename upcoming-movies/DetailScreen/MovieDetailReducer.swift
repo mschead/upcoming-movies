@@ -31,10 +31,10 @@ struct MovieDetailReducer: Reducer {
         
         let movie = action.movie
         
-        state.name = movie.name
-        state.genre = movie.genre
-        state.releaseDate = movie.releaseDate
-        state.overview = movie.overview
+        state.name = movie.name ?? ""
+        state.genre = movie.genre ?? ""
+        state.releaseDate = movie.releaseDate ?? ""
+        state.overview = movie.overview ?? ""
         state.movieImage = action.image
         
         return state

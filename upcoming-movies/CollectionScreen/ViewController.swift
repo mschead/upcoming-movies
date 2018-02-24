@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         manager = MovieCollectionViewManager(collectionView: moviesCollectionView)
+        manager.initializeFetchedResultsController()
         
         self.moviesCollectionView.delegate = manager
         self.moviesCollectionView.dataSource = manager
@@ -31,32 +32,34 @@ class ViewController: UIViewController {
     }
     
     fileprivate func loadCollectionInfo() {
-        MoviesRequester().makeRequest() { (result) in
-            switch result {
-            case .success(let pages):
-                let movies = pages.results.map { (movieWrapper) -> Movie in
-                    let movie = Movie()
-                    movie.name = movieWrapper.title
-                    movie.overview = movieWrapper.overview
-                    movie.releaseDate = movieWrapper.releaseDate
-                    movie.urlImage = "https://image.tmdb.org/t/p/w300" + movieWrapper.posterPath
-                    return movie
+        let moviesDatabase = manager.fetchedResultsController.fetchedObjects ?? []
+        let moviesPersistence = MoviesPersistence()
+        
+        if moviesDatabase.isEmpty {
+            MoviesRequester().makeRequest() { (result) in
+                switch result {
+                case .success(let pages):
+                    pages.results.forEach { (movieWrapper) in
+                        moviesPersistence.save(movie: movieWrapper)
+                    }
+                    
+                    self.infoView.isHidden = true
+                    self.moviesCollectionView.isHidden = false
+                    
+                case .failure(let error):
+                    print("error: \(error.localizedDescription)")
+                    
+                    self.indicatorActivity.stopAnimating()
+                    self.infoActivity.text = "Error fetching the movies. Try reopening the app!"
+                    
                 }
-                
-                self.manager.movies = movies
-                self.manager.collectionView.reloadData()
-                
-                self.infoView.isHidden = true
-                self.moviesCollectionView.isHidden = false
-                
-            case .failure(let error):
-                print("error: \(error.localizedDescription)")
-                
-                self.indicatorActivity.stopAnimating()
-                self.infoActivity.text = "Error fetching the movies. Try reopening the app!"
-                
             }
+        } else {
+            self.infoView.isHidden = true
+            self.moviesCollectionView.isHidden = false
         }
+        
+
     }
     
 }

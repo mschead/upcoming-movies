@@ -8,24 +8,54 @@
 
 import Foundation
 import UIKit
+import CoreData
 
-class MovieCollectionViewManager : NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class MovieCollectionViewManager : NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
 
     var collectionView: UICollectionView
-    var movies: [Movie] = []
+    var fetchedResultsController: NSFetchedResultsController<Movie>
     
     init(collectionView: UICollectionView) {
         self.collectionView = collectionView
+        
+        let request = NSFetchRequest<Movie>(entityName: "Movie")
+        let titleSort = NSSortDescriptor(key: "name", ascending: true)
+        request.sortDescriptors = [titleSort]
+        
+        let moc = NSManagedObjectContext.mr_default()
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
+    }
+    
+    func initializeFetchedResultsController() {
+        fetchedResultsController.delegate = self
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("Failed to initialize FetchedResultsController: \(error)")
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
+        return fetchedResultsController.fetchedObjects!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCollectionCell", for: indexPath) as! MovieCollectionViewCell
-        cell.setFieldValue(movie: movies[indexPath.row])
+        
+        let object = self.fetchedResultsController.object(at: indexPath)
+        
+        cell.setFieldValue(movie: object)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! MovieCollectionViewCell
+        
+        let object = self.fetchedResultsController.object(at: indexPath)
+        
+        mainStore.dispatch(SetMovieDetailAction(object, cell.movieImage.image!))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -48,12 +78,13 @@ class MovieCollectionViewManager : NSObject, UICollectionViewDelegateFlowLayout,
         return UIEdgeInsetsMake(0, 0, 0, 0);
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! MovieCollectionViewCell
-        
-        let movie = self.movies[indexPath.row]
-        
-        mainStore.dispatch(SetMovieDetailAction(movie, cell.movieImage.image!))
+
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        if type == .insert {
+            collectionView.insertItems(at: [newIndexPath!])
+        }
     }
+    
 
 }
