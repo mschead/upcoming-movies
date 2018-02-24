@@ -19,7 +19,7 @@ extension Movie {
 
     @NSManaged public var name: String?
     @NSManaged public var urlImage: String?
-    @NSManaged public var genre: String?
+    @NSManaged public var genres: String?
     @NSManaged public var overview: String?
     @NSManaged public var releaseDate: String?
 

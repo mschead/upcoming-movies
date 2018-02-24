@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "upcoming-movies/CollectionScreen/ViewController.swift"
-            timestampString = "541194736.30996"
+            timestampString = "541199146.37577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "loadCollectionInfo()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "upcoming-movies/CollectionScreen/ViewController.swift"
-            timestampString = "541194736.310214"
+            timestampString = "541199146.376574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "loadCollectionInfo()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "upcoming-movies/CollectionScreen/ViewController.swift"
-            timestampString = "541194736.310393"
+            timestampString = "541199146.377045"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "loadCollectionInfo()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,59 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "upcoming-movies/CollectionScreen/ViewController.swift"
-            timestampString = "541194736.310534"
+            timestampString = "541199146.377486"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "loadCollectionInfo()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "upcoming_movies.ViewController.(loadCollectionInfo in _E97317F1B9A89F6104F9C8150BF2F174)() -&gt; ()"
-                  moduleName = "upcoming-movies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/schead/Documents/upcoming-movies/upcoming-movies/CollectionScreen/ViewController.swift"
-                  timestampString = "541191448.5488549"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "664">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (upcoming_movies.Result&lt;upcoming_movies.ResultsPage&gt;) -&gt; () in upcoming_movies.ViewController.(loadCollectionInfo in _E97317F1B9A89F6104F9C8150BF2F174)() -&gt; ()"
-                  moduleName = "upcoming-movies"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/schead/Documents/upcoming-movies/upcoming-movies/CollectionScreen/ViewController.swift"
-                  timestampString = "541191448.551811"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "50">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "upcoming-movies/CollectionScreen/ViewController.swift"
-            timestampString = "541194736.3106689"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "getOtherPages(totalPages:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "upcoming-movies/CollectionScreen/ViewController.swift"
-            timestampString = "541194736.310788"
+            timestampString = "541199146.377782"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "getOtherPages(totalPages:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "upcoming-movies/CollectionScreen/ViewController.swift"
-            timestampString = "541194736.3109"
+            timestampString = "541199146.378068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "getOtherPages(totalPages:)"
             landmarkType = "7">
          </BreakpointContent>

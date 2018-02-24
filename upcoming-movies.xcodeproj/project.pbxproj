@@ -32,6 +32,8 @@
 		4AD898032041D95C007E19C7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AD898012041D95C007E19C7 /* Model.xcdatamodeld */; };
 		4AD8980E2041DC9F007E19C7 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8980C2041DC9F007E19C7 /* Movie+CoreDataClass.swift */; };
 		4AD8980F2041DC9F007E19C7 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8980D2041DC9F007E19C7 /* Movie+CoreDataProperties.swift */; };
+		4AD898112041FCA1007E19C7 /* ResultsGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD898102041FCA1007E19C7 /* ResultsGenre.swift */; };
+		4AD898132041FCCE007E19C7 /* GenreWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD898122041FCCE007E19C7 /* GenreWrapper.swift */; };
 		D9DC104BB3B7C2480981C513 /* Pods_upcoming_movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE15AEE705278111EA82BE3 /* Pods_upcoming_movies.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		4AD898022041D95C007E19C7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		4AD8980C2041DC9F007E19C7 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
 		4AD8980D2041DC9F007E19C7 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4AD898102041FCA1007E19C7 /* ResultsGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsGenre.swift; sourceTree = "<group>"; };
+		4AD898122041FCCE007E19C7 /* GenreWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreWrapper.swift; sourceTree = "<group>"; };
 		6FE15AEE705278111EA82BE3 /* Pods_upcoming_movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_upcoming_movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0057B38F8B7F12FE203713 /* Pods-upcoming-movies-upcoming-moviesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-upcoming-movies-upcoming-moviesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-upcoming-movies-upcoming-moviesTests/Pods-upcoming-movies-upcoming-moviesTests.release.xcconfig"; sourceTree = "<group>"; };
 		B98500B6C38692AF8EFF6880 /* Pods-upcoming-movies-upcoming-moviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-upcoming-movies-upcoming-moviesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-upcoming-movies-upcoming-moviesTests/Pods-upcoming-movies-upcoming-moviesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 			children = (
 				4ABEE9D02040C5D800DD0CCB /* MovieWrapper.swift */,
 				4ABEE9D22040C65400DD0CCB /* ResultsPage.swift */,
+				4AD898102041FCA1007E19C7 /* ResultsGenre.swift */,
+				4AD898122041FCCE007E19C7 /* GenreWrapper.swift */,
 			);
 			path = JSONWrappers;
 			sourceTree = "<group>";
@@ -469,10 +475,12 @@
 				4ABEE9CC2040C20600DD0CCB /* MovieCollectionViewManager.swift in Sources */,
 				4AD898032041D95C007E19C7 /* Model.xcdatamodeld in Sources */,
 				4A22CE11203F38F8008E84F9 /* AppDelegate.swift in Sources */,
+				4AD898132041FCCE007E19C7 /* GenreWrapper.swift in Sources */,
 				4AD898002041D8AE007E19C7 /* MoviesPersistence.swift in Sources */,
 				4ABEE9D32040C65400DD0CCB /* ResultsPage.swift in Sources */,
 				4AD8980E2041DC9F007E19C7 /* Movie+CoreDataClass.swift in Sources */,
 				4ABEE9C92040BC1800DD0CCB /* MovieDetailState.swift in Sources */,
+				4AD898112041FCA1007E19C7 /* ResultsGenre.swift in Sources */,
 				4ABEE9C12040B93C00DD0CCB /* RootReducer.swift in Sources */,
 				4ABEE9CE2040C56500DD0CCB /* MoviesRequester.swift in Sources */,
 				4ABEE9BF2040B90B00DD0CCB /* RootState.swift in Sources */,

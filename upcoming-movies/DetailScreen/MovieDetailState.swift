@@ -14,7 +14,7 @@ struct MovieDetailState : StateType {
     
     var movieImage: UIImage!
     var name = String()
-    var genre = String()
+    var genres = String()
     var releaseDate = String()
     var overview = String()
     

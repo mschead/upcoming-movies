@@ -12,17 +12,19 @@ struct MovieWrapper : Codable {
     
     var title: String
     var posterPath: String
-//    var genre
+    var genreIds: [Int]
     var overview: String
     var releaseDate: String
     
     enum CodingKeys: String, CodingKey {
         case title = "title"
         case posterPath = "poster_path"
-        //    var genre
+        case genreIds = "genre_ids"
         case overview = "overview"
         case releaseDate = "release_date"
     }
 
+    
+    
 }
 

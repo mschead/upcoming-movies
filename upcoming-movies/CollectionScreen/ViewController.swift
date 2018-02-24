@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var indicatorActivity: UIActivityIndicatorView!
     @IBOutlet weak var infoActivity: UILabel!
     
+    let moviesRequester = MoviesRequester()
     var manager: MovieCollectionViewManager!
-    var movies: [Movie] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +36,12 @@ class ViewController: UIViewController {
         let moviesPersistence = MoviesPersistence()
         
         if moviesDatabase.isEmpty {
-            MoviesRequester().makeRequest() { (result) in
+            moviesRequester.makeFirstPageRequest() { (result) in
                 switch result {
                 case .success(let page):
                     page.results.forEach { (movieWrapper) in
-                        moviesPersistence.save(movie: movieWrapper)
+                        let genres = self.getMovieGenresNames(genresId: movieWrapper.genreIds, genresWrapper: self.moviesRequester.genres)
+                        moviesPersistence.save(movie: movieWrapper, genres: genres)
                     }
                     
                     self.getOtherPages(totalPages: page.total_pages)
@@ -64,15 +65,32 @@ class ViewController: UIViewController {
 
     }
     
+    
+    func getMovieGenresNames(genresId: [Int], genresWrapper: [GenreWrapper]) -> String {
+        var genresNames: [String] = []
+        
+        genresId.forEach { id in
+            genresWrapper.forEach { genreWrapper in
+                if genreWrapper.id == id {
+                    genresNames.append(genreWrapper.name)
+                }
+            }
+        }
+        
+        return genresNames.joined(separator: ", ")
+    }
+    
+    
     fileprivate func getOtherPages(totalPages: Int) {
         let moviesPersistence = MoviesPersistence()
         
         for pageNumber in 2...9 {
-            MoviesRequester().makeRequest(page: pageNumber) { (result) in
+            moviesRequester.makeMovieRequest(page: pageNumber) { (result) in
                 switch result {
                 case .success(let page):
                     page.results.forEach { (movieWrapper) in
-                        moviesPersistence.save(movie: movieWrapper)
+                        let genres = self.getMovieGenresNames(genresId: movieWrapper.genreIds, genresWrapper: self.moviesRequester.genres)
+                        moviesPersistence.save(movie: movieWrapper, genres: genres)
                     }
                     
                 case .failure(let error):
