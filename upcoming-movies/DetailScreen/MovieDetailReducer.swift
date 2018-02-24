@@ -35,7 +35,7 @@ struct MovieDetailReducer: Reducer {
         state.genre = movie.genre
         state.releaseDate = movie.releaseDate
         state.overview = movie.overview
-//        state.movieImage
+        state.movieImage = action.image
         
         return state
     }

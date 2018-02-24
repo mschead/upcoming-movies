@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="375.19999999999999" y="33.733133433283363"/>
         </scene>
-        <!--Movie Detail View Controller-->
+        <!--Movie Info-->
         <scene sceneID="7fY-6N-Kt5">
             <objects>
-                <viewController id="vdE-hd-EPh" customClass="MovieDetailViewController" customModule="upcoming_movies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Movie Info" id="vdE-hd-EPh" customClass="MovieDetailViewController" customModule="upcoming_movies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6rW-Cb-WyQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

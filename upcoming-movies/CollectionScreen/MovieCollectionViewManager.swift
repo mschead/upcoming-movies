@@ -12,11 +12,10 @@ import UIKit
 class MovieCollectionViewManager : NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
 
     var collectionView: UICollectionView
-    var movies: [Movie]
+    var movies: [Movie] = []
     
     init(collectionView: UICollectionView) {
         self.collectionView = collectionView
-        movies = MoviesService().getMovies()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -50,8 +49,11 @@ class MovieCollectionViewManager : NSObject, UICollectionViewDelegateFlowLayout,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! MovieCollectionViewCell
+        
         let movie = self.movies[indexPath.row]
-        mainStore.dispatch(SetMovieDetailAction(movie))
+        
+        mainStore.dispatch(SetMovieDetailAction(movie, cell.movieImage.image!))
     }
 
 }

@@ -12,7 +12,7 @@ import ReSwift
 
 struct MovieDetailState : StateType {
     
-    var movieImage: UIImage?
+    var movieImage: UIImage!
     var name = String()
     var genre = String()
     var releaseDate = String()

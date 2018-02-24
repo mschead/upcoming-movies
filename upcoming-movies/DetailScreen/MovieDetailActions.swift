@@ -8,12 +8,15 @@
 
 import Foundation
 import ReSwift
+import UIKit
 
 struct SetMovieDetailAction : Action {
     
     var movie: Movie
+    var image: UIImage
     
-    init(_ movie: Movie) {
+    init(_ movie: Movie, _ image: UIImage) {
         self.movie = movie
+        self.image = image
     }
 }

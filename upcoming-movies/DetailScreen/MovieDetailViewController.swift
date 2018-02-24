@@ -25,7 +25,7 @@ class MovieDetailViewController: UIViewController, StoreSubscriber {
     }
     
     func newState(state: MovieDetailState) {
-//        movieImage.image = U
+        movieImage.image = state.movieImage
         name.text = state.name
         genre.text = state.genre
         releaseDate.text = state.releaseDate

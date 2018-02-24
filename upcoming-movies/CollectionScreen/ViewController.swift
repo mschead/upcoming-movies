@@ -22,7 +22,31 @@ class ViewController: UIViewController {
         
         self.moviesCollectionView.delegate = manager
         self.moviesCollectionView.dataSource = manager
+        
+        loadCollectionInfo()
     }
-
+    
+    fileprivate func loadCollectionInfo() {
+        MoviesRequester().makeRequest() { (result) in
+            switch result {
+            case .success(let pages):
+                let movies = pages.results.map { (movieWrapper) -> Movie in
+                    let movie = Movie()
+                    movie.name = movieWrapper.title
+                    movie.overview = movieWrapper.overview
+                    movie.releaseDate = movieWrapper.releaseDate
+                    movie.urlImage = "https://image.tmdb.org/t/p/w300" + movieWrapper.posterPath
+                    return movie
+                }
+                
+                self.manager.movies = movies
+                self.manager.collectionView.reloadData()
+                
+            case .failure(let error):
+                print("error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
 }
 
