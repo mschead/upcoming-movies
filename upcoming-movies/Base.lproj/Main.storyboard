@@ -100,6 +100,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Upcoming Movies" id="00c-n2-5Wf">
                         <barButtonItem key="backBarButtonItem" title="Back" id="25x-YU-7fJ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="8kk-yu-wmm">
+                            <connections>
+                                <action selector="onSearchClick:" destination="BYZ-38-t0r" id="YMQ-ma-BSm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="indicatorActivity" destination="Qwd-1Z-JMZ" id="tM7-Pt-J2p"/>

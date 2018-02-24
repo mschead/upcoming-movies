@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
 
@@ -16,12 +16,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var indicatorActivity: UIActivityIndicatorView!
     @IBOutlet weak var infoActivity: UILabel!
     
+    var buttonCopy: UIBarButtonItem!
+    
     let moviesRequester = MoviesRequester()
     var manager: MovieCollectionViewManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        buttonCopy = self.navigationItem.rightBarButtonItem
+        
         manager = MovieCollectionViewManager(collectionView: moviesCollectionView)
         manager.initializeFetchedResultsController()
         
@@ -29,6 +33,26 @@ class ViewController: UIViewController {
         self.moviesCollectionView.dataSource = manager
         
         loadCollectionInfo()
+    }
+    
+    @IBAction func onSearchClick(_ sender: Any) {
+        createSearchBar()
+    }
+    
+    fileprivate func createSearchBar() {
+        let searchBar = UISearchBar()
+        searchBar.showsCancelButton = true
+        searchBar.placeholder = "Type your movie here!"
+        searchBar.delegate = self
+        
+        self.navigationItem.rightBarButtonItem = nil
+        self.navigationItem.titleView = searchBar
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.navigationItem.title = "Upcoming Movies"
+        self.navigationItem.rightBarButtonItem = buttonCopy
+        self.navigationItem.titleView = nil
     }
     
     fileprivate func loadCollectionInfo() {
