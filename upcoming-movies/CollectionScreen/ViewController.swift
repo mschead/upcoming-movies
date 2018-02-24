@@ -12,6 +12,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
 
+    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var indicatorActivity: UIActivityIndicatorView!
+    @IBOutlet weak var infoActivity: UILabel!
+    
     var manager: MovieCollectionViewManager!
     var movies: [Movie] = []
 
@@ -42,8 +46,15 @@ class ViewController: UIViewController {
                 self.manager.movies = movies
                 self.manager.collectionView.reloadData()
                 
+                self.infoView.isHidden = true
+                self.moviesCollectionView.isHidden = false
+                
             case .failure(let error):
                 print("error: \(error.localizedDescription)")
+                
+                self.indicatorActivity.stopAnimating()
+                self.infoActivity.text = "Error fetching the movies. Try reopening the app!"
+                
             }
         }
     }
