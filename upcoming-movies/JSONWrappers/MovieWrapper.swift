@@ -23,5 +23,6 @@ struct MovieWrapper : Codable {
         case overview = "overview"
         case releaseDate = "release_date"
     }
+
 }
 

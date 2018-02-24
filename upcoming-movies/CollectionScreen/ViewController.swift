@@ -38,10 +38,12 @@ class ViewController: UIViewController {
         if moviesDatabase.isEmpty {
             MoviesRequester().makeRequest() { (result) in
                 switch result {
-                case .success(let pages):
-                    pages.results.forEach { (movieWrapper) in
+                case .success(let page):
+                    page.results.forEach { (movieWrapper) in
                         moviesPersistence.save(movie: movieWrapper)
                     }
+                    
+                    self.getOtherPages(totalPages: page.total_pages)
                     
                     self.infoView.isHidden = true
                     self.moviesCollectionView.isHidden = false
@@ -61,6 +63,28 @@ class ViewController: UIViewController {
         
 
     }
+    
+    fileprivate func getOtherPages(totalPages: Int) {
+        let moviesPersistence = MoviesPersistence()
+        
+        for pageNumber in 2...9 {
+            MoviesRequester().makeRequest(page: pageNumber) { (result) in
+                switch result {
+                case .success(let page):
+                    page.results.forEach { (movieWrapper) in
+                        moviesPersistence.save(movie: movieWrapper)
+                    }
+                    
+                case .failure(let error):
+                    print("error: \(error.localizedDescription)")
+                }
+            }
+        }
+
+    }
+    
+    
+    
     
 }
 

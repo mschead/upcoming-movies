@@ -12,7 +12,7 @@ class MoviesRequester {
     
     let API_KEY: String = "1f54bd990f1cdfb230adb312546d765d"
     
-    func makeRequest(completion: ((Result<ResultsPage>) -> Void)?) {
+    func makeRequest(page: Int = 1, completion: ((Result<ResultsPage>) -> Void)?) {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.themoviedb.org"
@@ -20,7 +20,7 @@ class MoviesRequester {
         urlComponents.queryItems = [
             URLQueryItem(name: "api_key", value: API_KEY),
             URLQueryItem(name: "language", value: "en-US"),
-            URLQueryItem(name: "page", value: "1")
+            URLQueryItem(name: "page", value: String(page))
         ]
         
         guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
