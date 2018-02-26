@@ -45,7 +45,6 @@ class MovieCollectionViewManager : NSObject, UICollectionViewDelegateFlowLayout,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCollectionCell", for: indexPath) as! MovieCollectionViewCell
         
         let object = self.fetchedResultsController.object(at: indexPath)
-        
         cell.setFieldValue(movie: object)
         return cell
     }
@@ -54,31 +53,25 @@ class MovieCollectionViewManager : NSObject, UICollectionViewDelegateFlowLayout,
         let cell = collectionView.cellForItem(at: indexPath) as! MovieCollectionViewCell
         
         let object = self.fetchedResultsController.object(at: indexPath)
-        
         mainStore.dispatch(SetMovieDetailAction(object, cell.movieImage.image!))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.size.width + 10
-        let insetLeft = collectionViewLayout.collectionView?.layoutMargins.left ?? 0
-        let insetRight = collectionViewLayout.collectionView?.layoutMargins.right ?? 0
         
-        let widthCell = width * 0.32
-        let totalWidth = widthCell * 3 + insetLeft + insetRight + 5 + 5
+        let width = collectionView.frame.size.width - 20 //+ 10
+//        let insetLeft = collectionViewLayout.collectionView?.layoutMargins.left ?? 0
+//        let insetRight = collectionViewLayout.collectionView?.layoutMargins.right ?? 0
         
-        if (totalWidth < width) {
-            return CGSize(width: width * 0.32, height: width * 0.32 * 1.54)
-        } else {
-            return CGSize(width: width * 0.3, height: width * 0.3 * 1.54)
+        var widthCell = width / 2
+        var heightCell = width * 0.9
+        
+        if (width > 600) {
+            widthCell = width / 3
+            heightCell = width * 0.5
         }
+        
+        return CGSize(width: widthCell, height: heightCell)
     }
-    
-    // check this!
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(0, 0, 0, 0);
-    }
-    
-
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         if type == .insert {

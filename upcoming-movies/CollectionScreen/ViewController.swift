@@ -24,6 +24,11 @@ class ViewController: UIViewController, UISearchBarDelegate, StoreSubscriber {
     let moviesRequester = MoviesRequester()
     var manager: MovieCollectionViewManager!
 
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        manager.collectionView.collectionViewLayout.invalidateLayout()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
