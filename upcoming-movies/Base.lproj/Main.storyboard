@@ -171,7 +171,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ms6-bM-2pE" customClass="MovieContainerView" customModule="upcoming_movies" customModuleProvider="target">
                                                 <rect key="frame" x="37" y="40" width="300" height="300"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lego-poster" translatesAutoresizingMaskIntoConstraints="NO" id="iRH-7t-ajF">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-thumb" translatesAutoresizingMaskIntoConstraints="NO" id="iRH-7t-ajF">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                                     </imageView>
                                                 </subviews>
@@ -260,6 +260,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="lego-poster" width="220" height="326"/>
+        <image name="no-thumb" width="200" height="200"/>
     </resources>
 </document>
