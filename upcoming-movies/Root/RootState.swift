@@ -12,6 +12,7 @@ import ReSwift
 struct RootState : StateType {
     
     var movieDetailState: MovieDetailState = MovieDetailState()
+    var moviesCollectionState: MoviesCollectionState = MoviesCollectionState()
     
 }
 

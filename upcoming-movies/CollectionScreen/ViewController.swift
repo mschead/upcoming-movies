@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import ReSwift
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class ViewController: UIViewController, UISearchBarDelegate, StoreSubscriber {
 
+    typealias StoreSubscriberStateType = MoviesCollectionState
+    
     @IBOutlet weak var moviesCollectionView: UICollectionView!
 
     @IBOutlet weak var infoView: UIView!
@@ -33,13 +36,19 @@ class ViewController: UIViewController, UISearchBarDelegate {
         self.moviesCollectionView.dataSource = manager
         
         loadCollectionInfo()
+        mainStore.subscribe(self, selector: {$0.moviesCollectionState})
+    }
+    
+    func newState(state: MoviesCollectionState) {
+        // the search data coming from the state would be used here
+        print(state.searchBarText)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        mainStore.dispatch(SetSearchBarText(searchText))
     }
     
     @IBAction func onSearchClick(_ sender: Any) {
-        createSearchBar()
-    }
-    
-    fileprivate func createSearchBar() {
         let searchBar = UISearchBar()
         searchBar.showsCancelButton = true
         searchBar.placeholder = "Type your movie here!"
