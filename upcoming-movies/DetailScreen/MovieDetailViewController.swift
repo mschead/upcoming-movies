@@ -23,8 +23,6 @@ class MovieDetailViewController: UIViewController, StoreSubscriber {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.configMovieView()
-        
         mainStore.subscribe(self, selector: {$0.movieDetailState})
     }
     
@@ -34,14 +32,6 @@ class MovieDetailViewController: UIViewController, StoreSubscriber {
         genre.text = state.genres
         releaseDate.text = state.releaseDate
         overview.text = state.overview
-    }
-    
-    fileprivate func configMovieView() {
-        movieView.layer.cornerRadius = 3
-        movieView.layer.shadowColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0).cgColor
-        movieView.layer.shadowOffset = CGSize(width: 0, height: 1.75)
-        movieView.layer.shadowRadius = 1.7
-        movieView.layer.shadowOpacity = 0.45
     }
 
 }

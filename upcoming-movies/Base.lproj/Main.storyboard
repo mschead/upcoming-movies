@@ -168,7 +168,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 </variation>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ms6-bM-2pE">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ms6-bM-2pE" customClass="MovieContainerView" customModule="upcoming_movies" customModuleProvider="target">
                                                 <rect key="frame" x="37" y="40" width="300" height="300"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lego-poster" translatesAutoresizingMaskIntoConstraints="NO" id="iRH-7t-ajF">
