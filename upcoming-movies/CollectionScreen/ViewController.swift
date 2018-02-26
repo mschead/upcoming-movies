@@ -35,7 +35,8 @@ class ViewController: UIViewController, UISearchBarDelegate, StoreSubscriber {
         buttonCopy = self.navigationItem.rightBarButtonItem
         
         manager = MovieCollectionViewManager(collectionView: moviesCollectionView)
-        manager.initializeFetchedResultsController()
+        manager.fetchedResultsController.delegate = manager
+        manager.makeFetch()
         
         self.moviesCollectionView.delegate = manager
         self.moviesCollectionView.dataSource = manager
@@ -45,8 +46,11 @@ class ViewController: UIViewController, UISearchBarDelegate, StoreSubscriber {
     }
     
     func newState(state: MoviesCollectionState) {
-        // the search data coming from the state would be used here
-        print(state.searchBarText)
+        if (state.searchBarText == "") {
+            manager.removeFilter()
+        } else {
+            manager.applyFilter(text: state.searchBarText)
+        }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -54,36 +58,22 @@ class ViewController: UIViewController, UISearchBarDelegate, StoreSubscriber {
     }
     
     @IBAction func onSearchClick(_ sender: Any) {
-        let alertController = UIAlertController(title: "Oh no ...", message: "Functionality not working :(", preferredStyle: .alert)
-        
-        let actionDismiss = UIAlertAction(title: "Dismiss",
-                                         style: .cancel,
-                                         handler: { (action: UIAlertAction!) in
-                                            alertController.dismiss(animated: true)})
-        
-        
-        alertController.addAction(actionDismiss)
-        
-        self.present(alertController, animated: true, completion: nil)
+        let searchBar = UISearchBar()
+        searchBar.showsCancelButton = true
+        searchBar.placeholder = "Type your movie here!"
+        searchBar.delegate = self
 
-//        THE VERY BEGINNING OF SEARCHBAR IMPLEMENTATION
-//
-//        let searchBar = UISearchBar()
-//        searchBar.showsCancelButton = true
-//        searchBar.placeholder = "Type your movie here!"
-//        searchBar.delegate = self
-//
-//        self.navigationItem.rightBarButtonItem = nil
-//        self.navigationItem.titleView = searchBar
+        self.navigationItem.rightBarButtonItem = nil
+        self.navigationItem.titleView = searchBar
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.navigationItem.title = "Upcoming Movies"
         self.navigationItem.rightBarButtonItem = buttonCopy
         self.navigationItem.titleView = nil
+        
+        mainStore.dispatch(SetSearchBarText(""))
     }
-    
-    var movies: [String] = []
     
     fileprivate func loadCollectionInfo() {
         let moviesDatabase = manager.fetchedResultsController.fetchedObjects ?? []
