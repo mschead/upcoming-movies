@@ -49,13 +49,27 @@ class ViewController: UIViewController, UISearchBarDelegate, StoreSubscriber {
     }
     
     @IBAction func onSearchClick(_ sender: Any) {
-        let searchBar = UISearchBar()
-        searchBar.showsCancelButton = true
-        searchBar.placeholder = "Type your movie here!"
-        searchBar.delegate = self
+        let alertController = UIAlertController(title: "Oh no ...", message: "Functionality not working :(", preferredStyle: .alert)
         
-        self.navigationItem.rightBarButtonItem = nil
-        self.navigationItem.titleView = searchBar
+        let actionDismiss = UIAlertAction(title: "Dismiss",
+                                         style: .cancel,
+                                         handler: { (action: UIAlertAction!) in
+                                            alertController.dismiss(animated: true)})
+        
+        
+        alertController.addAction(actionDismiss)
+        
+        self.present(alertController, animated: true, completion: nil)
+
+//        THE VERY BEGINNING OF SEARCHBAR IMPLEMENTATION
+//
+//        let searchBar = UISearchBar()
+//        searchBar.showsCancelButton = true
+//        searchBar.placeholder = "Type your movie here!"
+//        searchBar.delegate = self
+//
+//        self.navigationItem.rightBarButtonItem = nil
+//        self.navigationItem.titleView = searchBar
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -133,6 +147,8 @@ class ViewController: UIViewController, UISearchBarDelegate, StoreSubscriber {
         }
 
     }
+    
+    
     
     
     
