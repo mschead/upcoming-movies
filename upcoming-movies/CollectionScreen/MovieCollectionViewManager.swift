@@ -21,6 +21,7 @@ class MovieCollectionViewManager : NSObject, UICollectionViewDelegateFlowLayout,
         let request = NSFetchRequest<Movie>(entityName: "Movie")
         let titleSort = NSSortDescriptor(key: "name", ascending: true)
         request.sortDescriptors = [titleSort]
+//        request.predicate = NSPredicate(format: "name LIKE[c] %@", "*C*")
         
         let moc = NSManagedObjectContext.mr_default()
         fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)

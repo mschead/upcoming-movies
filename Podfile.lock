@@ -1,17 +1,20 @@
 PODS:
+  - Alamofire (4.6.0)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
   - ReSwift (3.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.6)
   - MagicalRecord
   - ReSwift (~> 3.0)
 
 SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   ReSwift: f0255f4b4f2dacd12c5d97d34d13fc5dad6d6371
 
-PODFILE CHECKSUM: 40aa873a24fb912e82b136cf1e9d92e9994e7012
+PODFILE CHECKSUM: 55cf3c3b5d38f211baa8d3654f7ecba98be6e34f
 
 COCOAPODS: 1.4.0

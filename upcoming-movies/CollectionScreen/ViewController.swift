@@ -83,6 +83,8 @@ class ViewController: UIViewController, UISearchBarDelegate, StoreSubscriber {
         self.navigationItem.titleView = nil
     }
     
+    var movies: [String] = []
+    
     fileprivate func loadCollectionInfo() {
         let moviesDatabase = manager.fetchedResultsController.fetchedObjects ?? []
         let moviesPersistence = MoviesPersistence()
@@ -96,7 +98,7 @@ class ViewController: UIViewController, UISearchBarDelegate, StoreSubscriber {
                         moviesPersistence.save(movie: movieWrapper, genres: genres)
                     }
                     
-                    self.getOtherPages(totalPages: page.total_pages)
+                    self.getOtherPages()
                     
                     self.infoView.isHidden = true
                     self.moviesCollectionView.isHidden = false
@@ -133,10 +135,10 @@ class ViewController: UIViewController, UISearchBarDelegate, StoreSubscriber {
     }
     
     
-    fileprivate func getOtherPages(totalPages: Int) {
+    fileprivate func getOtherPages() {
         let moviesPersistence = MoviesPersistence()
         
-        for pageNumber in 2...9 {
+        for pageNumber in 2...3 {
             moviesRequester.makeMovieRequest(page: pageNumber) { (result) in
                 switch result {
                 case .success(let page):

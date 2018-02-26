@@ -12,15 +12,17 @@ import MagicalRecord
 class MoviesPersistence {
     
     func save(movie: MovieWrapper, genres: String) {
-        let movieDB = Movie.mr_createEntity()!
-        
-        movieDB.setValue(movie.title, forKey: "name")
-        movieDB.setValue(movie.overview, forKey: "overview")
-        movieDB.setValue(movie.posterPath, forKey: "urlImage")
-        movieDB.setValue(movie.releaseDate, forKey: "releaseDate")
-        movieDB.setValue(genres, forKey: "genres")
-        
-        NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+        guard let _ = Movie.mr_findFirst(byAttribute: "name", withValue: movie.title) else {
+            let movieDB = Movie.mr_createEntity()!
+            movieDB.setValue(movie.title, forKey: "name")
+            movieDB.setValue(movie.overview, forKey: "overview")
+            movieDB.setValue(movie.posterPath, forKey: "urlImage")
+            movieDB.setValue(movie.releaseDate, forKey: "releaseDate")
+            movieDB.setValue(genres, forKey: "genres")
+            
+            NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
+            return
+        }
     }
     
     func load() -> [NSManagedObject] {

@@ -23,7 +23,12 @@ class MovieCollectionViewCell: UICollectionViewCell {
         title.text = movie.name ?? "-"
         genres.text = movie.genres ?? "-"
         releaseDate.text = movie.releaseDate ?? "-"
-        movieImage.downloadImageFrom(link: "https://image.tmdb.org/t/p/w300" + movie.urlImage!, contentMode: UIViewContentMode.redraw)
+        if movie.urlImage != "no-poster" {
+            movieImage.downloadImageFrom(link: "https://image.tmdb.org/t/p/w300" + movie.urlImage!, contentMode: UIViewContentMode.redraw)
+        } else {
+            movieImage.image = UIImage(named: "no-thumb")
+        }
+        
     }
 
 }
