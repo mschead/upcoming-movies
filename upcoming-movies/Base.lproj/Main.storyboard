@@ -129,21 +129,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQv-Wb-DeU" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="640"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="646"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lego-poster" translatesAutoresizingMaskIntoConstraints="NO" id="BQM-ja-3q6">
-                                                <rect key="frame" x="37.5" y="54" width="300" height="300"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="500" id="2iE-l8-3AV">
-                                                        <variation key="widthClass=compact" constant="300"/>
-                                                    </constraint>
-                                                    <constraint firstAttribute="height" constant="500" id="f2D-Aj-Jnu">
-                                                        <variation key="widthClass=compact" constant="300"/>
-                                                    </constraint>
-                                                </constraints>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Avengers" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPX-DK-N4b" userLabel="Name">
-                                                <rect key="frame" x="40" y="374" width="295" height="19.5"/>
+                                                <rect key="frame" x="40" y="380" width="295" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -152,7 +141,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZu-1K-VQN" userLabel="Genre">
-                                                <rect key="frame" x="40" y="403.5" width="295" height="14.5"/>
+                                                <rect key="frame" x="40" y="409.5" width="295" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -161,7 +150,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20/05/2012" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAg-Kg-Pra" userLabel="ReleaseDate">
-                                                <rect key="frame" x="40" y="418" width="295" height="14.5"/>
+                                                <rect key="frame" x="40" y="424" width="295" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -170,7 +159,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60U-dr-qwY" userLabel="Overview">
-                                                <rect key="frame" x="40" y="452.5" width="295" height="167.5"/>
+                                                <rect key="frame" x="40" y="458.5" width="295" height="167.5"/>
                                                 <string key="text">Nick Fury is the director of S.H.I.E.L.D., an international peace-keeping agency. The agency is a who's who of Marvel Super Heroes, with Iron Man, The Incredible Hulk, Thor, Captain America, Hawkeye and Black Widow. When global security is threatened by Loki and his cohorts, Nick Fury and his team will need all their powers to save the world from disaster which is formed by Loki and his team.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <nil key="textColor"/>
@@ -179,24 +168,41 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 </variation>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ms6-bM-2pE">
+                                                <rect key="frame" x="37" y="40" width="300" height="300"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lego-poster" translatesAutoresizingMaskIntoConstraints="NO" id="iRH-7t-ajF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="iRH-7t-ajF" firstAttribute="leading" secondItem="Ms6-bM-2pE" secondAttribute="leading" id="5WC-F6-p1V"/>
+                                                    <constraint firstAttribute="height" constant="300" id="64f-dn-zOa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iRH-7t-ajF" secondAttribute="trailing" id="BEq-HN-eUX"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iRH-7t-ajF" secondAttribute="bottom" id="QCt-SO-H1h"/>
+                                                    <constraint firstAttribute="width" constant="300" id="gjc-mE-2Xs"/>
+                                                    <constraint firstItem="iRH-7t-ajF" firstAttribute="top" secondItem="Ms6-bM-2pE" secondAttribute="top" id="hwL-0o-IRw"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="OPX-DK-N4b" firstAttribute="top" secondItem="Ms6-bM-2pE" secondAttribute="bottom" constant="40" id="2Ez-2f-SPR"/>
                                             <constraint firstItem="OPX-DK-N4b" firstAttribute="leading" secondItem="wQv-Wb-DeU" secondAttribute="leading" constant="40" id="4E1-pu-JrE"/>
                                             <constraint firstItem="QZu-1K-VQN" firstAttribute="top" secondItem="OPX-DK-N4b" secondAttribute="bottom" constant="10" id="6dR-QV-EPG"/>
+                                            <constraint firstItem="Ms6-bM-2pE" firstAttribute="top" secondItem="wQv-Wb-DeU" secondAttribute="top" constant="40" id="DLg-cb-joe"/>
                                             <constraint firstItem="60U-dr-qwY" firstAttribute="top" secondItem="pAg-Kg-Pra" secondAttribute="bottom" constant="20" id="E6b-rr-ZP4"/>
                                             <constraint firstItem="60U-dr-qwY" firstAttribute="leading" secondItem="wQv-Wb-DeU" secondAttribute="leading" constant="40" id="HNl-AS-qT2"/>
                                             <constraint firstAttribute="trailing" secondItem="QZu-1K-VQN" secondAttribute="trailing" constant="40" id="Kq0-TN-BP3"/>
                                             <constraint firstItem="pAg-Kg-Pra" firstAttribute="leading" secondItem="wQv-Wb-DeU" secondAttribute="leading" constant="40" id="Luz-rG-Hx9"/>
                                             <constraint firstItem="pAg-Kg-Pra" firstAttribute="top" secondItem="QZu-1K-VQN" secondAttribute="bottom" id="Tpx-Wz-w7d"/>
-                                            <constraint firstItem="BQM-ja-3q6" firstAttribute="centerX" secondItem="wQv-Wb-DeU" secondAttribute="centerX" id="TwQ-rD-MVn"/>
-                                            <constraint firstItem="BQM-ja-3q6" firstAttribute="top" secondItem="wQv-Wb-DeU" secondAttribute="top" constant="54" id="UFz-eH-J41"/>
                                             <constraint firstItem="QZu-1K-VQN" firstAttribute="leading" secondItem="wQv-Wb-DeU" secondAttribute="leading" constant="40" id="XJx-Am-0rM"/>
                                             <constraint firstAttribute="trailing" secondItem="OPX-DK-N4b" secondAttribute="trailing" constant="40" id="YeQ-Fs-L0j"/>
                                             <constraint firstAttribute="trailing" secondItem="60U-dr-qwY" secondAttribute="trailing" constant="40" id="ZAz-7H-8pm"/>
                                             <constraint firstAttribute="bottom" secondItem="60U-dr-qwY" secondAttribute="bottom" constant="20" id="a1h-sJ-Khf"/>
                                             <constraint firstAttribute="trailing" secondItem="pAg-Kg-Pra" secondAttribute="trailing" constant="40" id="lny-ju-kJe"/>
-                                            <constraint firstItem="OPX-DK-N4b" firstAttribute="top" secondItem="BQM-ja-3q6" secondAttribute="bottom" constant="20" id="vmJ-ol-1g5"/>
+                                            <constraint firstItem="Ms6-bM-2pE" firstAttribute="centerX" secondItem="wQv-Wb-DeU" secondAttribute="centerX" id="mW2-jN-0dS"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -220,7 +226,8 @@
                     </view>
                     <connections>
                         <outlet property="genre" destination="QZu-1K-VQN" id="idu-Vn-5zN"/>
-                        <outlet property="movieImage" destination="BQM-ja-3q6" id="aor-xc-20n"/>
+                        <outlet property="movieImage" destination="iRH-7t-ajF" id="rrn-Rs-t9w"/>
+                        <outlet property="movieView" destination="Ms6-bM-2pE" id="P2I-5Y-E2W"/>
                         <outlet property="name" destination="OPX-DK-N4b" id="dZs-R1-LLq"/>
                         <outlet property="overview" destination="60U-dr-qwY" id="57U-w1-ePt"/>
                         <outlet property="releaseDate" destination="pAg-Kg-Pra" id="XEu-7Z-5p4"/>

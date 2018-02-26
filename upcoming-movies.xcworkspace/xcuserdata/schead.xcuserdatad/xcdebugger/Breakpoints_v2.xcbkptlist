@@ -33,6 +33,38 @@
             endingLineNumber = "92"
             landmarkName = "loadCollectionInfo()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "upcoming_movies.ViewController.(loadCollectionInfo in _E97317F1B9A89F6104F9C8150BF2F174)() -&gt; ()"
+                  moduleName = "upcoming-movies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/schead/Documents/upcoming-movies/upcoming-movies/CollectionScreen/ViewController.swift"
+                  timestampString = "541336580.816157"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "877">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (upcoming_movies.Result&lt;upcoming_movies.ResultsPage&gt;) -&gt; () in upcoming_movies.ViewController.(loadCollectionInfo in _E97317F1B9A89F6104F9C8150BF2F174)() -&gt; ()"
+                  moduleName = "upcoming-movies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/schead/Documents/upcoming-movies/upcoming-movies/CollectionScreen/ViewController.swift"
+                  timestampString = "541336580.81955"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "2270">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -79,8 +111,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
             endingLineNumber = "136"
-            landmarkName = "getOtherPages(totalPages:)"
-            landmarkType = "7">
+            landmarkName = "MoviesCollectionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
